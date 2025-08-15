@@ -5,19 +5,12 @@
       <em>Potente servidor para la generación de mensajes de commit mediante MCP</em>
    </p>
 
-   <!-- Compatibilidad -->
    [![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
    [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
    [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-
-   <!-- Calidad y herramientas -->
    [![Type checking: mypy](https://img.shields.io/badge/mypy-checked-blue.svg)](http://mypy-lang.org/)
    [![GitPython](https://img.shields.io/badge/GitPython-3.1%2B-orange)](https://gitpython.readthedocs.io/en/stable/)
-
    [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
-
-
-   <!-- Licencia -->
    [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 </div>
