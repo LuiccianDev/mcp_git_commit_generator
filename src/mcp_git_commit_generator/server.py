@@ -1,4 +1,3 @@
-import logging
 from enum import Enum
 from pathlib import Path
 from typing import Optional, cast
@@ -416,14 +415,10 @@ def optimized_git_status(repo: git.Repo) -> str:
 
 
 async def serve(repository: Path | None = None) -> None:
-    logger = logging.getLogger(__name__)
-
     if repository is not None:
         try:
             git.Repo(repository)
-            logger.info(f"Using repository at {repository}")
         except git.InvalidGitRepositoryError:
-            logger.error(f"{repository} is not a valid Git repository")
             return
 
     server = Server("mcp-git-unified")
