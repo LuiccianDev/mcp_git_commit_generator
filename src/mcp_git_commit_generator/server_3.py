@@ -6,10 +6,7 @@ from typing import Optional, cast
 import git
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
-from mcp.types import (
-    TextContent,
-    Tool,
-)
+from mcp.types import TextContent, Tool
 from pydantic import BaseModel, Field
 
 # Default number of context lines to show in diff output
@@ -260,7 +257,6 @@ def git_show(repo: git.Repo, revision: str) -> str:
         return f"Error showing commit: {str(e)}"
 
 
-
 def git_branch(
     repo: git.Repo,
     branch_type: str,
@@ -292,7 +288,10 @@ def git_branch(
 
 # Nuevas funciones optimizadas
 def generate_commit_analysis(
-    repo: git.Repo, commit_type: str | None = None, scope: str | None = None, lite_mode: bool = False
+    repo: git.Repo,
+    commit_type: str | None = None,
+    scope: str | None = None,
+    lite_mode: bool = False,
 ) -> str:
     """Genera análisis para commit usando GitPython directamente"""
     try:
@@ -429,7 +428,7 @@ async def serve(repository: Path | None = None) -> None:
 
     server = Server("mcp-git-unified")
 
-    @server.list_tools() # type: ignore[misc]
+    @server.list_tools()  # type: ignore[misc]
     async def list_tools() -> list[Tool]:
         return [
             # Herramientas básicas originales
@@ -511,7 +510,7 @@ async def serve(repository: Path | None = None) -> None:
             ),
         ]
 
-    @server.call_tool() # type: ignore[misc]
+    @server.call_tool()  # type: ignore[misc]
     async def call_tool(name: str, arguments: dict) -> list[TextContent]:
         repo_path = Path(arguments["repo_path"])
 
