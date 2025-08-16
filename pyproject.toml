@@ -17,6 +17,10 @@ dev = [
     "pre-commit>=4.2.0",
     "ruff>=0.12.7",
 ]
+test = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+]
 
 # Configuración de Black (formateador)
 [tool.black]
@@ -32,6 +36,7 @@ multi_line_output = 3
 include_trailing_comma = true
 skip_glob = ["__pycache__", ".git", ".venv", "build", "dist"]
 src_paths = ["src"]
+skip = ["tests"]
 
 # Configuración de MyPy (verificador de tipos)
 [tool.mypy]
@@ -49,13 +54,5 @@ strict_equality = true
 show_error_codes = true
 check_untyped_defs = true
 ignore_missing_imports = true
-exclude = ["tests/", "build", ".venv"]
+exclude = ["tests", "build", ".venv"]
 files = ["src"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py", "*_test.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
-pythonpath = ["src"]
-asyncio_mode = "auto"
