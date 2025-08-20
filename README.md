@@ -15,7 +15,6 @@
 
 </div>
 
-
 A Model Context Protocol (MCP) server that helps generate conventional commit messages by analyzing Git repository changes.
 
 ## 🚀 Features
@@ -28,12 +27,14 @@ A Model Context Protocol (MCP) server that helps generate conventional commit me
 ## 📦 Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/mcp-git-commit-generator.git
    cd mcp-git-commit-generator
    ```
 
 2. Install dependencies:
+
    ```bash
    pip install -e .
    ```
@@ -75,11 +76,13 @@ src/
 ### Setup Development Environment
 
 1. Install development dependencies:
+
    ```bash
    pip install -e ".[dev]"
    ```
 
 2. Install pre-commit hooks:
+
    ```bash
    pre-commit install
    ```
