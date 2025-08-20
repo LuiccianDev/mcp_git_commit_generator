@@ -1,9 +1,30 @@
 [project]
 name = "mcp-git-commit-generator"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "generator commit messages"
 readme = "README.md"
 requires-python = ">=3.13"
+authors = [
+    {name = "LuiccianDev", email = "LuiccianDev@gmail.com"}
+]
+keywords = ["mcp", "git", "commit", "generator",  "ai", "llm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/LuiccianDev"
+Repository = "https://github.com/LuiccianDev/mcp_git_commit_generator"
+Documentation = "https://github.com/LuiccianDev/mcp_git_commit_generator/blob/master/README.md"
+issues = "https://github.com/LuiccianDev/mcp_git_commit_generator/issues"
+
+
 dependencies = [
     "gitpython>=3.1.45",
     "mcp[cli]>=1.12.3",
@@ -11,8 +32,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "black>=25.1.0",
-    "isort>=6.0.1",
     "mypy>=1.17.1",
     "pre-commit>=4.2.0",
     "ruff>=0.12.7",
@@ -21,38 +40,3 @@ test = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
 ]
-
-# Configuración de Black (formateador)
-[tool.black]
-line-length = 88
-target-version = ['py313']
-include = 'src/.*\.py$'
-
-# Configuración de isort (organizar imports)
-[tool.isort]
-profile = "black"
-line_length = 88
-multi_line_output = 3
-include_trailing_comma = true
-skip_glob = ["__pycache__", ".git", ".venv", "build", "dist"]
-src_paths = ["src"]
-skip = ["tests"]
-
-# Configuración de MyPy (verificador de tipos)
-[tool.mypy]
-python_version = "3.13"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_decorators = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-warn_no_return = true
-warn_unreachable = true
-strict_equality = true
-show_error_codes = true
-check_untyped_defs = true
-ignore_missing_imports = true
-exclude = ["tests", "build", ".venv"]
-files = ["src"]
