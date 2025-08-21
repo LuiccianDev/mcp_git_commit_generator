@@ -40,3 +40,9 @@ test = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
 ]
+
+[project.scripts]
+mcp-git-commit-generator = "mcp_git_commit_generator.__main__:main"
+
+[project.entry-points."mcp.servers"]
+git-commit-generator = "mcp_git_commit_generator.__main__:main"
