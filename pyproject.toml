@@ -18,17 +18,17 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+dependencies = [
+    "gitpython>=3.1.45",
+    "mcp[cli]>=1.12.3",
+]
+
 [project.urls]
 Homepage = "https://github.com/LuiccianDev"
 Repository = "https://github.com/LuiccianDev/mcp_git_commit_generator"
 Documentation = "https://github.com/LuiccianDev/mcp_git_commit_generator/blob/master/README.md"
 issues = "https://github.com/LuiccianDev/mcp_git_commit_generator/issues"
 
-
-dependencies = [
-    "gitpython>=3.1.45",
-    "mcp[cli]>=1.12.3",
-]
 
 [dependency-groups]
 dev = [
