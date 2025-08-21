@@ -13,9 +13,9 @@
    [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
    [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+A Model Context Protocol (MCP) server that helps generate conventional commit messages
+by analyzing Git repository changes.
 </div>
-
-A Model Context Protocol (MCP) server that helps generate conventional commit messages by analyzing Git repository changes.
 
 ## 🚀 Features
 
@@ -55,7 +55,7 @@ python -m mcp_git_commit_generator
 
 ## 📂 Project Structure
 
-```
+```text
 src/
 ├── mcp_git_commit_generator/
 │   ├── core/              # Core functionality
