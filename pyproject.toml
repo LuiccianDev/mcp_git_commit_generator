@@ -48,10 +48,9 @@ mcp-git-commit-generator = "mcp_git_commit_generator.__main__:main"
 git-commit-generator = "mcp_git_commit_generator.__main__:main"
 
 
-# Configuración de paquetes (OBLIGATORIO):
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["mcp_git_commit_generator"]
+include = ["mcp_git_commit_generator*"]
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
