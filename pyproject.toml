@@ -7,11 +7,11 @@ requires-python = ">=3.13"
 authors = [
     {name = "LuiccianDev", email = "LuiccianDev@gmail.com"}
 ]
+license = { file = "LICENSE" }
 keywords = ["mcp", "git", "commit", "generator",  "ai", "llm"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
     "Topic :: Database",
