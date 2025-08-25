@@ -14,73 +14,76 @@
    [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
    [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A Python package that implements the Model Context Protocol (MCP) to generate meaningful Git commit messages by analyzing repository changes.
+A Python package implementing the Model Context Protocol (MCP) to generate meaningful Git commit messages by analyzing repository changes.
 </div>
 
-## 🚀 Features
+---
 
-- 🔍 **Smart Change Analysis**: Analyzes Git repository changes to suggest meaningful commit messages
-- 📝 **Conventional Commits**: Follows the Conventional Commits specification
-- 🛠️ **Git Integration**: Built with GitPython for seamless Git operations
-- 🚀 **MCP Server**: Implements the Model Context Protocol for extensibility
+## 🚀 Overview
+
+MCP Git Commit Generator is a Python package that leverages the Model Context Protocol (MCP) to analyze your Git repository and generate conventional, context-aware commit messages. It supports multiple deployment modes and integrates seamlessly with DXT and MCP environments.
+
+---
+
+## 🛠️ Tool Reference
+
+For a complete list of available tools and their input schemas, see [TOOLS.md](./TOOLS.md).
+
+---
 
 ## 📦 Installation
 
-1. Clone the repository:
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/LuiccianDev/mcp_git_commit_generator.git
-   cd mcp_git_commit_generator
-   ```
+- **Python 3.11+** (with type hints)
+- **UV Package Manager** ([Install UV](https://docs.astral.sh/uv/getting-started/installation/)) or use pip
+- **Git** (for repository operations)
+- **Desktop Extensions (DXT)** ([Install DXT](https://github.com/anthropics/dxt)) for packaging .dxt files for Claude Desktop
 
-2. Install in development mode:
-
-   ```bash
-   pip install -e .
-   ```
-
-## 📋 Requirements
-
-- Python 3.13+
-- GitPython 3.1.45+
-- MCP (Model Context Protocol) 1.12.3+
-
-## 🛠️ Usage
-
-### Running the Server
+### Clone the Repository
 
 ```bash
-python -m mcp_git_commit_generator
+git clone https://github.com/LuiccianDev/mcp_git_commit_generator.git
+cd mcp_git_commit_generator
 ```
 
-### Available Options
+### Install in Development Mode
 
-- `--lite`: Run in lite mode (faster but less detailed analysis)
-- `--type`: Specify commit type (feat, fix, docs, etc.)
-- `--scope`: Specify commit scope
-- `--lite`: Run in lite mode (faster but less detailed analysis)
+```bash
+pip install -e .
+```
+
+---
 
 ## 📂 Project Structure
 
 ```text
 mcp_git_commit_generator/
-├── core/                  # Core functionality
-│   └── __init__.py
-├── tools/                 # MCP tools
-│   ├── __init__.py
-│   ├── commit_analysis.py  # Commit message generation
-│   ├── git_operations.py   # Git operations
-│   └── register_tools.py   # Tool registration
-├── __init__.py            # Package metadata
-├── __main__.py            # CLI entry point
-└── server.py              # MCP server implementation
+├── src/
+│   ├── core/                  # Core logic and utilities
+│   │   └── __init__.py
+│   ├── tools/                 # MCP tool implementations
+│   │   ├── __init__.py
+│   │   ├── commit_analysis.py  # Commit message generation logic
+│   │   ├── git_operations.py   # Git repository operations
+│   │   └── register_tools.py   # Tool registration for MCP
+│   ├── __init__.py            # Package metadata
+│   ├── __main__.py            # CLI entry point
+│   └── server.py              # MCP server implementation
+├── tests/                     # Unit and integration tests
+│   └── test_commit_analysis.py
+├── manifest.json              # DXT packaging manifest
+├── TOOLS.md                   # Tool reference documentation
+└──README.md                  # Project documentation
 ```
+
+---
 
 ## 🧪 Development
 
 ### Setup Development Environment
 
-1. Clone the repository and navigate to the project directory
+1. Clone the repository and navigate to the project directory.
 2. Install development dependencies:
 
    ```bash
@@ -93,25 +96,88 @@ mcp_git_commit_generator/
    pre-commit install
    ```
 
-### Code Quality Tools
+---
 
-- **Black**: Code formatting
-- **isort**: Import sorting
-- **mypy**: Static type checking
-- **Ruff**: Linting
+## ⚙️ Deployment Modes
 
-## 📄 License
+MCP Git Commit Generator Server supports three deployment modes to fit different workflows and environments:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### DXT Package Deployment
 
-## 🤝 Contributing
+**Recommended for:** Users in the DXT ecosystem who want seamless configuration management.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. **Package the project:**
+
+   ```bash
+   dxt pack
+   ```
+
+2. **Usage:** Once packaged, the tool integrates directly with DXT-compatible clients with automatic user configuration variable substitution.
+
+3. **Server Configuration:** This project includes [manifest.json](./manifest.json) for building the .dxt package.
+
+For more details, see [DXT Package Documentation](https://github.com/anthropics/dxt).
+
+### Traditional MCP Server
+
+**Recommended for:** Standard MCP server deployments with existing MCP infrastructure.
+
+Add to your MCP configuration file (e.g., Claude Desktop's `mcp_config.json`):
+
+```bash
+# Build packages
+uv build
+# Install packages
+pip install dist/your_package*.whl
+```
+
+Then configure MCP:
+
+```json
+{
+  "mcpServers": {
+    "mcp_git_commit": {
+      "command": "uv",
+      "args": ["run", "mcp_git_commit"]
+    }
+  }
+}
+```
+
+Or use this configuration (less recommended):
+
+```json
+{
+   "mcp-word": {
+      "command": "/Users/user/to/repo/.venv/Scripts/python",
+      "args": [
+        "/Users/user/to/repo/src/mcp_git_commit_generator/server.py"
+      ]
+   }
+}
+```
 
 ---
 
-Made with ❤️ for better Git workflows
+## 🤝 Contributing
+
+Contributions are welcome! Please read the contribution guidelines before submitting pull requests.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <p><strong>MCP Git Commit Generator Server</strong></p>
+  <p>Empowering AI assistants with comprehensive Git commit generation capabilities</p>
+  <p>
+    <a href="https://github.com/LuiccianDev/mcp_git_commit_generator">🏠 GitHub</a> •
+    <a href="https://modelcontextprotocol.io">🔗 MCP Protocol</a> •
+    <a href="https://github.com/LuiccianDev/mcp_git_commit_generator/blob/main/TOOLS.md">📚 Tool Documentation</a>
+  </p>
+  <p><em>Created by LuiccianDev</em></p>
+</div>

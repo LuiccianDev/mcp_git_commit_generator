@@ -15,12 +15,14 @@
     "type": "python",
     "entry_point": "src/mcp_git_commit_generator/server.py",
     "mcp_config": {
-      "command": "python",
+      "command": "uv",
       "args": [
-        "${__dirname}/src/mcp_git_commit_generator/server.py"
+        "--directory",
+        "${__dirname}",
+        "run",
+        "src/mcp_git_commit_generator/server.py"
       ],
       "env": {
-          "PYTHONPATH": "${__dirname}/src"
       }
     }
   },
