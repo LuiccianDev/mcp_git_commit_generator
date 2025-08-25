@@ -5,8 +5,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
 ## Basic Git Operations
 
 ### `git_status`
+
 - **Description**: Shows the working tree status
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string"
@@ -14,8 +16,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_diff_unstaged`
+
 - **Description**: Shows changes in the working directory that are not yet staged
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -24,8 +28,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_diff_staged`
+
 - **Description**: Shows changes that are staged for commit
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -34,8 +40,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_diff`
+
 - **Description**: Shows differences between branches or commits
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -45,8 +53,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_commit`
+
 - **Description**: Records changes to the repository
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -55,8 +65,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_add`
+
 - **Description**: Adds file contents to the staging area
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -65,8 +77,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_reset`
+
 - **Description**: Unstages all staged changes
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string"
@@ -74,8 +88,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_log`
+
 - **Description**: Shows the commit logs
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -84,8 +100,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_create_branch`
+
 - **Description**: Creates a new branch from an optional base branch
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -95,8 +113,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_checkout`
+
 - **Description**: Switches branches
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -105,8 +125,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_show`
+
 - **Description**: Shows the contents of a commit
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -115,8 +137,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_init`
+
 - **Description**: Initialize a new Git repository
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string"
@@ -124,8 +148,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `git_branch`
+
 - **Description**: List Git branches
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -138,8 +164,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
 ## Optimized Tools
 
 ### `generate_commit_message`
+
 - **Description**: Generate conventional commit message analysis (optimized)
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string",
@@ -150,8 +178,10 @@ This document lists all the Git tools available in the MCP Git Commit Generator 
   ```
 
 ### `optimized_status`
+
 - **Description**: Fast git status check using GitPython (optimized)
 - **Input Schema**:
+
   ```json
   {
     "repo_path": "string"

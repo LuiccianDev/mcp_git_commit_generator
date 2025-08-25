@@ -1,0 +1,37 @@
+{
+  "dxt_version": "0.1",
+  "name": "mcp-git-commit-generator",
+  "version": "1.0.0",
+  "description": "MCP Git Commit Generator for Desktops",
+  "author": {
+    "name": "LuiccianDev",
+    "email": "LuiccianDev@gmail.com",
+    "url": "https://github.com/LuiccianDev"
+  },
+  "homepage": "https://github.com/LuiccianDev",
+  "documentation": "https://github.com/LuiccianDev",
+  "support": "https://github.com/LuiccianDev",
+  "server": {
+    "type": "python",
+    "entry_point": "src/mcp_git_commit_generator/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${__dirname}",
+        "run",
+        "src/mcp_git_commit_generator/server.py"
+      ],
+      "env": {
+      }
+    }
+  },
+  "tools_generated": true,
+  "compatibility": {
+    "platforms": [
+      "win32"
+    ]
+
+  },
+  "license": "MIT"
+}

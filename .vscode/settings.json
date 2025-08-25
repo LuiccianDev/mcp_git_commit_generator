@@ -5,7 +5,7 @@
         "**/.hg": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "**/.venv": true,
+        "**/.venv": false,
         "**/__pycache__/**": true,
         "**/.ruff_cache/**": true,
         "**/.pytest_cache/**": true,

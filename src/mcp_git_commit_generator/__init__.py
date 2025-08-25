@@ -1,3 +1,5 @@
-from .main import serve
+# MCP Git Commit Generator
 
-__all__ = ["serve"]
+__version__ = "0.1.1"
+__author__ = "LuiccianDev"
+__description__ = "MCP Git Commit Generator"
